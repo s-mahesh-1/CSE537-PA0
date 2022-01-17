@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+		PA0
+	</title>
+</head>
+<body style="background-color: powderblue; text-align: center;">
+<table style="margin-left: auto; margin-right: auto;">
+	<form action="" method="post">
+		{% csrf_token %}
+		<tr>
+			{% for field in encryption_form %}
+				<td> {{ field.label_tag }} </td>
+				<td> {{ field }} </td>
+			{% endfor %}
+			<td> <input type="submit" name="encrypt" value="Encrypt" style="height: 50px; width: 100px; background-color: lightgreen;"> </td>
+		</tr>
+	</form>
+
+	<form action="" method="post">
+		{% csrf_token %}
+		<tr>
+			{% for field in decryption_form %}
+				<td> {{ field.label_tag }} </td>
+				<td> {{ field }} </td>
+			{% endfor %}
+			<td> <input type="submit" name="decrypt" value="Decrypt" style="height: 50px; width: 100px; background-color: lightgreen;"> </td>
+		</tr>
+	</form>
+</table>
+
+</body>
+</html>
